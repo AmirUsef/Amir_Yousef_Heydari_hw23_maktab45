@@ -1,0 +1,31 @@
+.comments {
+    margin-top: 5%;
+}
+
+.comment {
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: rgba(16, 46, 46, 0.973);
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px
+}
+
+.comment h4,
+.comment span {
+    display: inline
+}
+
+.comment p,
+.comment span {
+    color: rgb(184, 183, 183)
+}
+
+.comment h4 {
+    color: yellow;
+    margin: 0px 10px;
+}
+
+.comment span {
+    margin-top: 5px
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('../partials/sidebar') %>
+            <div id="content">
+                <%- include('../partials/dashboard-navbar') %>
+                    <table dir="rtl" class="table table-hover table-dark text-center">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">نام کاربری</th>
+                            <th scope="col">نام</th>
+                            <th scope="col">نام خانوادگی</th>
+                            <th scope="col">جنسیت</th>
+                            <th scope="col">تلفن همراه</th>
+                        </tr>
+                        <% for ( let i = 0; i < users.length; i++ ) { %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= users[i].username %>
+                                </td>
+                                <td>
+                                    <%= users[i].firstName %>
+                                </td>
+                                <td>
+                                    <%= users[i].lastName %>
+                                </td>
+                                <td>
+                                    <%= users[i].gender %>
+                                </td>
+                                <td>
+                                    <%= users[i].phoneNumber %>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary second-btn" href="/article/articles/<%= users[i]._id %>">مقالات</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary second-btn reset" username="<%= users[i].username %>">ریست پسوورد</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary second-btn delete" userId="<%= users[i]._id %>">حذف</a>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+            </div>
+    </div>
+    <div class="toast">
+        <div class="toast-header">
+            <strong class="mr-auto text-primary">خطا</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/javascripts/dashboard.js"></script>
+</body>
+
+</html>

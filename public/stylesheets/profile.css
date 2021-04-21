@@ -1,0 +1,68 @@
+#inputs input {
+    width: 200px;
+    position: absolute;
+    right: 75px;
+    border: 1px solid;
+    border-radius: 10px;
+    /* border-bottom: 2px solid gray; */
+    text-align: center;
+}
+
+.modal-body p {
+    position: absolute;
+    right: 350px;
+    color: red;
+}
+
+#inputs span {
+    width: 350px;
+    text-align: right;
+    position: relative;
+}
+
+#inputs a {
+    position: absolute;
+    right: 285px;
+    font-size: large;
+}
+
+#inputs a:hover {
+    color: green;
+}
+
+.saveBtn {
+    border: 1px solid rgb(38, 153, 10);
+    background-color: rgb(38, 153, 10);
+    border-radius: 5px;
+}
+
+#image {
+    height: 250px;
+    width: 250px;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    font-size: 1em;
+    font-weight: 100;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: red;
+}
+
+.inputfile+label {
+    cursor: pointer;
+}
